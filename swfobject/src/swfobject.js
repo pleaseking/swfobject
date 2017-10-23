@@ -1,4 +1,4 @@
-/*!    SWFObject v2.3.20130521 <http://github.com/swfobject/swfobject>
+/*!    SWFObject v2.3.20171022 <http://github.com/swfobject/swfobject> with changes by pleaseking and others
     is released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
 */
 
@@ -777,6 +777,7 @@ var swfobject = function () {
             var q = doc.location.search || doc.location.hash;
             if (q) {
                 if (/\?/.test(q)) { q = q.split("?")[1]; } // strip question mark
+                if (/#/.test(q)) { q = q.split("#")[1]; } // strip hash mark                
                 if (!param) {
                     return urlEncodeIfNecessary(q);
                 }
